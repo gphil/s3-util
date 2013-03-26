@@ -7,7 +7,10 @@ underneath. This is a work in progress.
 
 Current leiningen dependency:
 
-    [s3-util "0.1.0-SNAPSHOT"]
+```clojure
+
+[s3-util "0.1.0-SNAPSHOT"]
+```
 
 So far only one measly function exists:
 
@@ -17,6 +20,7 @@ So far only one measly function exists:
 
 ;; creates or overwrites "some-key" with "some-value" in "my-bucket"
 ;; "my-bucket" is automatically created if it does not already exist
+
 (spit cred "my-bucket" "some-key" "some-value")
 
 ```
