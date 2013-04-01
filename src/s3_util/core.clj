@@ -16,3 +16,13 @@
   (do
     (create-bucket-if-needed cred bucket)
     (s3/put-object cred bucket key value metadata)))
+
+(defn spit-map
+  "Puts a new S3 key/value pair into \"bucket\" using AWS credentials
+  \"cred\" for each key/value pair in map. Creates the bucket
+  automatically if it does not already exist. Passes metadata through
+  to aws.sdk.s3/put-object."
+  [cred bucket m & [metadata]]
+  (do
+    (create-bucket-if-needed cred bucket)
+    (map (fn [[k v]] (s3/put-object cred bucket k v metadata)) m)))

@@ -12,7 +12,7 @@ Current leiningen dependency:
 [s3-util "0.1.0-SNAPSHOT"]
 ```
 
-So far only one measly function exists:
+Right now there are only a couple of functions:
 
 ```clojure
 
@@ -22,6 +22,14 @@ So far only one measly function exists:
 ;; "my-bucket" is automatically created if it does not already exist
 
 (spit cred "my-bucket" "some-key" "some-value")
+
+
+;; creates or overwrites key-value pairs in "my-bucket" using the
+;; key-value pairs in the supplied map. "my-bucket" is automatically
+;; created if it does not already exist
+
+(spit-map cred "my-bucket" {"some-key" "some-value"
+                            "another-key" "another-value"})
 
 ```
 
