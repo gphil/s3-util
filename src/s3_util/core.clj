@@ -25,4 +25,4 @@
   [cred bucket m & [metadata]]
   (do
     (create-bucket-if-needed cred bucket)
-    (map (fn [[k v]] (s3/put-object cred bucket k v metadata)) m)))
+    (doall (map (fn [[k v]] (s3/put-object cred bucket k v metadata)) m))))
