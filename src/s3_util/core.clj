@@ -1,4 +1,5 @@
 (ns s3-util.core
+  (:refer-clojure :exclude [spit])
   (:require [aws.sdk.s3 :as s3]))
 
 (defn- create-bucket-if-needed
@@ -25,4 +26,4 @@
   [cred bucket m & [metadata]]
   (do
     (create-bucket-if-needed cred bucket)
-    (doall (map (fn [[k v]] (s3/put-object cred bucket k v metadata)) m))))
+    (map (fn [[k v]] (s3/put-object cred bucket k v metadata)) m)))

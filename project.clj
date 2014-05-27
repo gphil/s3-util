@@ -3,5 +3,5 @@
   :url "https://github.com/gphil/s3-util"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[clj-aws-s3 "0.3.3"]
+  :dependencies [[clj-aws-s3 "0.3.7"]
                  [org.clojure/clojure "1.4.0"]])
