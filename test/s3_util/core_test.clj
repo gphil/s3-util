@@ -1,6 +1,5 @@
 (ns s3-util.core-test
-  (:use clojure.test
-        s3-util.core))
+  (:require [clojure.test :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

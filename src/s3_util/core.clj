@@ -1,6 +1,6 @@
 (ns s3-util.core
-  (:refer-clojure :exclude [spit])
-  (:require [amazonica.aws.s3 :as s3]))
+  (:require [amazonica.aws.s3 :as s3])
+  (:refer-clojure :exclude [spit]))
 
 (defn- create-bucket-if-needed
   "Creates a new S3 bucket with name \"bucket\" using AWS credentials
